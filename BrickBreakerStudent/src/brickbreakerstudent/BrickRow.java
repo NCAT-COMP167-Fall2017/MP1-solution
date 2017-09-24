@@ -58,6 +58,15 @@ public class BrickRow {
         }
     }
     
+    /**
+     * Return the brickmask value at the given index
+     * @param index in brickmask array to retrieve the mask
+     * @return the brickmask, true if the brick is shown, otherwise false
+     */
+    public boolean getBrickMaskValue(int index) {
+        return brickmask[index];
+    }
+    
     
     
     /**
