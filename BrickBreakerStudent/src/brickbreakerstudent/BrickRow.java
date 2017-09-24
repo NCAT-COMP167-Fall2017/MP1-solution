@@ -118,7 +118,7 @@ public class BrickRow {
      */
     @Override
     public String toString(){
-        String outputString = color.getRed() + " " + color.getGreen() + " " + color.getBlue() + System.lineSeparator() + pointValue + System.lineSeparator();
+        String outputString = (color.getRed() * 255) + " " + (color.getGreen() * 255) + " " + (color.getBlue() * 255) + System.lineSeparator() + pointValue + System.lineSeparator();
         
         for(int i = 0; i < NUM_BRICKS; i++) {
             if(brickmask[i])
