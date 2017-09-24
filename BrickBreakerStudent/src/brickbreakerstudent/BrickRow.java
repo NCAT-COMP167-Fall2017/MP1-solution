@@ -67,7 +67,14 @@ public class BrickRow {
         return brickmask[index];
     }
     
-    
+    /**
+     * Set the brickmask to the given value at the given index
+     * @param index the location at which to place the given value in the brickmas
+     * @param value false for not visible and true for visible
+     */
+    public void setBrickMaskValue(int index, boolean value) {
+        brickmask[index] = value;
+    }
     
     /**
      * @return the pointValue
