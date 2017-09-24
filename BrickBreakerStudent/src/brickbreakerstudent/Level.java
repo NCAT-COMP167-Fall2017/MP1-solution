@@ -38,6 +38,15 @@ public class Level {
     }
     
     /**
+     * Sets the given BrickRow as the given index in brickRows
+     * @param index the location to place the given BrickRow
+     * @param bkRow the BrickRow to add
+     */ 
+    public void setBrickRow(int index, BrickRow bkRow) {
+        brickRows[index] = bkRow;
+    }
+    
+    /**
      * Creates a Level object from the given parameters
      * @param levelNum the numeric identifier for this level
      * @param numBrickRows the number of BrickRows present in this level
