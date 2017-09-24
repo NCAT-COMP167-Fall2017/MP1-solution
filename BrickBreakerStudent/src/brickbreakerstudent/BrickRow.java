@@ -25,7 +25,28 @@ public class BrickRow {
     public BrickRow() {
         pointValue = 0;
         color = Color.ORANGE;
-        brickmask = new boolean[20];
+        brickmask = new boolean[NUM_BRICKS];
+    }
+    
+    public BrickRow(int ptVal, Color clr, String bmask) {
+        pointValue = ptVal;
+        color = clr;
+        brickmask = new boolean[NUM_BRICKS];
+        
+        char[] maskArray = bmask.toCharArray();
+        
+        if(maskArray.length != brickmask.length) {
+            System.err.println("Input BrickMask does not meet BrickMask size requirements");
+            System.exit(-1);
+        }
+        
+        for(int i = 0; i < NUM_BRICKS; i++) {
+            if(maskArray[i] == '0') {
+                brickmask[i] = false;
+            } else {
+                brickmask[i] = true;
+            }
+        }
     }
     
     /**
