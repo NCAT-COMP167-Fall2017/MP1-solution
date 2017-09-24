@@ -29,6 +29,16 @@ public class Level {
     }
     
     /**
+     * Creates a Level object from the given parameters
+     * @param levelNum the numeric identifier for this level
+     * @param numBrickRows the number of BrickRows present in this level
+     */
+    public Level(int levelNum, int numBrickRows) {
+        this.levelNum = levelNum;
+        brickRows = new BrickRow[numBrickRows];
+    }
+    
+    /**
      * @return the levelNum
      */
     public int getLevelNum() {
