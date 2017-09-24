@@ -116,6 +116,7 @@ public class BrickRow {
      * Returns a string representation of a BrickRow that matches the input file format
      * @return A string with the RGB color value, the point value, and the brickmask
      */
+    @Override
     public String toString(){
         String outputString = color.getRed() + " " + color.getGreen() + " " + color.getBlue() + System.lineSeparator() + pointValue + System.lineSeparator();
         
