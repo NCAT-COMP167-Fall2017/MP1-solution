@@ -29,6 +29,15 @@ public class Level {
     }
     
     /**
+     * Retrieves the given BrickRow at the provided index
+     * @param index the index of the BrickRow in the Level
+     * @return BrickRow identified by the index
+     */
+    public BrickRow getBrickRow(int index) {
+        return brickRows[index];
+    }
+    
+    /**
      * Creates a Level object from the given parameters
      * @param levelNum the numeric identifier for this level
      * @param numBrickRows the number of BrickRows present in this level
