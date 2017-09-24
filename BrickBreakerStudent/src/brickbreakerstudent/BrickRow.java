@@ -7,8 +7,17 @@ import javafx.scene.paint.Color;
  * @author CCannon
  */
 public class BrickRow {
+    /*
+     * pointValue holds the point value for the bricks on this row
+     */
     private int pointValue;
+    /*
+     * color holds the color of bricks on this row
+    */
     private Color color;
+    /*
+     * True or false for each brick. true = visible, false = not visible
+    */
     private boolean[] brickmask;
 
     /**
