@@ -18,8 +18,15 @@ public class Level {
      * Array containing the brick rows in this level
      */
     private BrickRow[] brickRows;
+    private final int MAX_ROWS = 50;
 
-    
+    /**
+     * Creates a default level that is labeled 0 with MAX_ROWS, 50, rows
+     */
+    public Level() {
+        levelNum = 0;
+        brickRows = new BrickRow[MAX_ROWS];
+    }
     
     /**
      * @return the levelNum
