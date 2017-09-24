@@ -77,6 +77,14 @@ public class BrickRow {
     }
     
     /**
+     * Return length of the brickmask
+     * @return the length of the brickmask array
+     */
+    public int getBrickMaskLength() {
+        return brickmask.length;
+    }
+    
+    /**
      * @return the pointValue
      */
     public int getPointValue() {
@@ -102,5 +110,22 @@ public class BrickRow {
      */
     public void setColor(Color color) {
         this.color = color;
+    }
+    
+    /**
+     * Returns a string representation of a BrickRow that matches the input file format
+     * @return A string with the RGB color value, the point value, and the brickmask
+     */
+    public String toString(){
+        String outputString = color.getRed() + " " + color.getGreen() + " " + color.getBlue() + System.lineSeparator() + pointValue + System.lineSeparator();
+        
+        for(int i = 0; i < NUM_BRICKS; i++) {
+            if(brickmask[i])
+                outputString += "1";
+            else
+                outputString += "0";
+        }
+        
+        return outputString;
     }
 }
