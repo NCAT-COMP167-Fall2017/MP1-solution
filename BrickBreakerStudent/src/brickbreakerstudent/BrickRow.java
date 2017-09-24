@@ -19,7 +19,15 @@ public class BrickRow {
      * True or false for each brick. true = visible, false = not visible
     */
     private boolean[] brickmask;
+    
+    private final int NUM_BRICKS = 20;
 
+    public BrickRow() {
+        pointValue = 0;
+        color = Color.ORANGE;
+        brickmask = new boolean[20];
+    }
+    
     /**
      * @return the pointValue
      */
