@@ -1,0 +1,16 @@
+9/21/2017
+-  The brickmask property in the BrickRow class should be of type boolean not int.
+- The toString() method or BrickRow should output:
+Point Value
+RGB values
+brickmask values where 1=true and 0=false  (just like he input file).
+
+9/23/2017
+UML static methods and variables are noted by underlining them.  So, the readConfigFile method in the BrickBreakerIO class should be underlined in the UML class diagram.
+The readConfigFile method should return an array of level objects -- not void:   +readConfigFile( String configFilename ) : Level[]
+Your assignment does not have point values associated with the completion of each level.
+Level 1 - 20%
+Level 2 - 45%
+Level 3 - 65%
+Level 4 - 90%
+Level 5 - 100%
