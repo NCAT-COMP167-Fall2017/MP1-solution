@@ -69,4 +69,18 @@ public class Level {
     public void setLevelNum(int levelNum) {
         this.levelNum = levelNum;
     }
+    
+    /**
+     * Creates a String representation of this object that reflects the input files format
+     * @return a String containing all of the data in this Level object formatted as the input file
+     */
+    public String toString() {
+        String outputString = levelNum + System.lineSeparator() + brickRows.length;
+        
+        for(int i = 0; i < brickRows.length; i++) {
+            outputString += System.lineSeparator() + brickRows[i].toString();
+        }
+        
+        return outputString;
+    }
 }
