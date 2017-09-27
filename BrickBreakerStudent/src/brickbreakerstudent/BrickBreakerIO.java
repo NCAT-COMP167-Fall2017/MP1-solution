@@ -10,5 +10,7 @@ package brickbreakerstudent;
  * @author CCannon
  */
 public class BrickBreakerIO {
-    
+    public static void readConfigFile(String cFileName){
+        
+    }
 }
