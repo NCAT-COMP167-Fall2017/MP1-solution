@@ -74,6 +74,7 @@ public class Level {
      * Creates a String representation of this object that reflects the input files format
      * @return a String containing all of the data in this Level object formatted as the input file
      */
+    @Override
     public String toString() {
         String outputString = levelNum + System.lineSeparator() + brickRows.length;
         
