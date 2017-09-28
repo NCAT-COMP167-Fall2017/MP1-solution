@@ -47,6 +47,8 @@ public class BrickBreakerIO {
                     
                     newLvl.setBrickRow(rowIndex, newRow);
                 }
+                
+                levels[levelNumber] = newLvl;
             }
         } catch (FileNotFoundException ex) {
             levels = new Level[0];
