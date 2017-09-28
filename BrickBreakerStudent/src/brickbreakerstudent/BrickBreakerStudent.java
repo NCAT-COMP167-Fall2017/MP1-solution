@@ -14,18 +14,8 @@ import javafx.scene.paint.Color;
 public class BrickBreakerStudent {
     
     public static void main(String[] args) {
-        BrickRow row0 = new BrickRow(2, Color.AQUA, "10011010011010100110");
-        BrickRow row1 = new BrickRow(3, Color.RED, "11001010010010110111");
+        Level[] levels = BrickBreakerIO.readConfigFile(args[0]);
         
-        Level level = new Level(1, 2);
-        
-        row0.setColor(Color.GREEN);
-        row1.setPointValue(10);
-        
-        level.setBrickRow(0, row0);
-        level.setBrickRow(1, row1);
-        level.setLevelNum(3);
-        
-        System.out.println(level.toString());
+        System.out.println(levels[0].toString());
     }
 }
