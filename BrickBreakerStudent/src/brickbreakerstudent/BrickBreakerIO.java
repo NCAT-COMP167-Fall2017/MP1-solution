@@ -16,6 +16,11 @@ import javafx.scene.paint.Color;
  * @author CCannon
  */
 public class BrickBreakerIO {
+    /**
+     * Reads a config file for a BrickBreaker game and returns an array of levels for that game.
+     * @param cFileName file containing the properly formatted data for a BrickBreaker game
+     * @return array of Level objects each containing a number of BrickRows parsed from the config file
+     */
     public static Level[] readConfigFile(String cFileName){
         Level[] levels;
         
