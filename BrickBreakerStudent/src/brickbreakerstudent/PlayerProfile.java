@@ -125,4 +125,14 @@ public class PlayerProfile {
         return savedGames.remove(index);
     }
     
+    public String toString() {
+        String outputString = name + System.lineSeparator() + numGamesPlayed + System.lineSeparator() + highScore + System.lineSeparator() + savedGames.size();
+        
+        for(int i = 0; i < savedGames.size(); i++) {
+            outputString += System.lineSeparator() + savedGames.get(i);
+        }
+        
+        return outputString;
+    }
+    
 }
