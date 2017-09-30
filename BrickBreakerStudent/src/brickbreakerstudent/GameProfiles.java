@@ -97,6 +97,10 @@ public class GameProfiles {
         return profiles.remove(index);
     }
     
+    /**
+     * Returns a string representation of each of the PlayerProfiles in the profile array
+     * @return A player configuration formatted String
+     */
     public String toString() {
         String outputString = "";
         
