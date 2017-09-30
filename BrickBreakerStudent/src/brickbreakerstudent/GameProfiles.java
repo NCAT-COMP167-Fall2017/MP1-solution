@@ -96,4 +96,14 @@ public class GameProfiles {
     public PlayerProfile deletePlayerProfile(int index) {
         return profiles.remove(index);
     }
+    
+    public String toString() {
+        String outputString = "";
+        
+        for(int i = 0; i < profiles.size(); i++) {
+            outputString += profiles.get(i).toString();
+        }
+        
+        return outputString;
+    }
 }
