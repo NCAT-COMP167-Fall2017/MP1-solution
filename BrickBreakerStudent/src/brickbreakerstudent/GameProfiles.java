@@ -17,6 +17,16 @@ public class GameProfiles {
     private ArrayList<PlayerProfile> profiles;
 
     /**
+     * Instantiates a new GameProfile object where each item is a new, default
+     * instance of that object.
+     */
+    public GameProfiles() {
+        selectedProfile = new PlayerProfile();
+        highGameProfile = new PlayerProfile();
+        profiles = new ArrayList<PlayerProfile> ();
+    }
+    
+    /**
      * @return the selectedProfile
      */
     public PlayerProfile getSelectedProfile() {
