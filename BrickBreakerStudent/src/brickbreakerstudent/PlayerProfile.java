@@ -17,6 +17,27 @@ public class PlayerProfile {
     private int numGamesPlayed;
     private int highScore;
     private ArrayList<String> savedGames;
+    
+    /**
+     * Instantiates a PlayerProfile object where all fields are set to the java
+     * default values.
+     */
+    public PlayerProfile() {
+        name = "";
+        numGamesPlayed = 0;
+        highScore = 0;
+        savedGames = new ArrayList<String> ();
+    }
+    
+    /**
+     * Instantiates a PlayerProfile object with the given name. All other fields
+     * are set to java default values.
+     * @param name 
+     */
+    public PlayerProfile(String name) {
+        this();
+        name = name;
+    }
 
     /**
      * @return the name
