@@ -129,6 +129,7 @@ public class PlayerProfile {
      * Returns a string representation of this PlayerProfile in the same format as the input file
      * @return string representation of this PlayerProfile
      */
+    @Override
     public String toString() {
         String outputString = name + System.lineSeparator() + numGamesPlayed + System.lineSeparator() + highScore + System.lineSeparator() + savedGames.size();
         

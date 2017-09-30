@@ -101,6 +101,7 @@ public class GameProfiles {
      * Returns a string representation of each of the PlayerProfiles in the profile array
      * @return A player configuration formatted String
      */
+    @Override
     public String toString() {
         String outputString = "";
         
