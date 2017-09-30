@@ -107,6 +107,8 @@ public class GameProfiles {
         
         for(int i = 0; i < profiles.size(); i++) {
             outputString += profiles.get(i).toString();
+            if(i < profiles.size()-1)
+                outputString += System.lineSeparator();
         }
         
         return outputString;

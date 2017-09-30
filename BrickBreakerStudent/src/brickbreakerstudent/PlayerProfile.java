@@ -36,7 +36,7 @@ public class PlayerProfile {
      */
     public PlayerProfile(String name) {
         this();
-        name = name;
+        this.name = name;
     }
 
     /**
