@@ -125,6 +125,10 @@ public class PlayerProfile {
         return savedGames.remove(index);
     }
     
+    /**
+     * Returns a string representation of this PlayerProfile in the same format as the input file
+     * @return string representation of this PlayerProfile
+     */
     public String toString() {
         String outputString = name + System.lineSeparator() + numGamesPlayed + System.lineSeparator() + highScore + System.lineSeparator() + savedGames.size();
         
