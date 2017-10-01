@@ -60,7 +60,7 @@ public class GameProfiles {
      * Returns the number of items in the ArrayList profiles
      * @return the number of items in the ArrayList profiles
      */
-    public int getNumPlayerProfiles() {
+    public int getNumProfiles() {
         return profiles.size();
     }
     
@@ -69,7 +69,7 @@ public class GameProfiles {
      * @param index the location of the PlayerProfile to be retrieved from profiles
      * @return the PlayerProfile at given index
      */
-    public PlayerProfile getPlayerProfile(int index) {
+    public PlayerProfile getProfile(int index) {
         return profiles.get(index);
     }
     
@@ -78,7 +78,7 @@ public class GameProfiles {
      * @param index the location to place given PlayerProfile item
      * @param item the PlayerProfile to add to ArrayList profiles
      */
-    public void setPlayerProfile(int index, PlayerProfile item) {
+    public void setProfile(int index, PlayerProfile item) {
         profiles.set(index, item);
     }
     
@@ -86,7 +86,7 @@ public class GameProfiles {
      * Appends the given PlayerProfile item to the end of ArrayList profiles
      * @param item the PlayerProfile to add
      */
-    public void addPlayerProfile(PlayerProfile item) {
+    public void addProfile(PlayerProfile item) {
         profiles.add(item);
     }
     
@@ -95,7 +95,7 @@ public class GameProfiles {
      * @param index the location of the PlayerProfile to remove
      * @return the PlayerProfile removed from the given index in the ArrayList profiles
      */
-    public PlayerProfile deletePlayerProfile(int index) {
+    public PlayerProfile deleteProfile(int index) {
         return profiles.remove(index);
     }
     
