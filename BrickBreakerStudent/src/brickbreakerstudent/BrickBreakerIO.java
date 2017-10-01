@@ -57,7 +57,37 @@ public class BrickBreakerIO {
         return levels;
     }
     
+    /**
+     * Reads a config file of PlayerProfiles and adds them to the statically provided Game Profile
+     * @param gmProf a static GameProfiles object that will receive PlayerProfiles
+     * @param pFileName the path to a player profile config file
+     */
     public static void readProfiles(GameProfiles gmProf, String pFileName) {
-        
+        try {
+            Scanner profileReader = new Scanner(new File(pFileName));
+            
+            while(profileReader.hasNext()) {
+                PlayerProfile newPlayer = new PlayerProfile();
+                
+                newPlayer.setName(profileReader.nextLine());
+                newPlayer.setNumGamesPlayed(Integer.parseInt(profileReader.nextLine()));
+                newPlayer.setHighScore(Integer.parseInt(profileReader.nextLine()));
+                
+                int numSavedGames = Integer.parseInt(profileReader.nextLine());
+                
+                for(int i = 0; i < numSavedGames; i++) {
+                    newPlayer.addSavedGame(profileReader.nextLine());
+                }
+                
+                if(newPlayer.getHighScore() > gmProf.getHighGameProfile().getHighScore())
+                    gmProf.setHighGameProfile(newPlayer);
+                
+                gmProf.addPlayerProfile(newPlayer);
+            }
+            
+            gmProf.setSelectedProfile(gmProf.getPlayerProfile(0));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BrickBreakerIO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
     }
 }
