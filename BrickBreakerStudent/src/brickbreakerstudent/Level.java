@@ -71,6 +71,22 @@ public class Level {
     }
     
     /**
+     * Retrives the number of Brick Rows in this level from the size of the brickRows array
+     * @return the number of BrickRow objects in this Level object
+     */
+    public int getNumBrickRows(){
+        return brickRows.length;
+    }
+    
+    /**
+     * Returns the number of bricks in each row based off the length of the first BrickMask
+     * @return the number of bricks in each BrickRow object
+     */
+    public int getBricksPerRow() {
+        return brickRows[0].getBrickMaskLength();
+    }
+    
+    /**
      * Creates a String representation of this object that reflects the input files format
      * @return a String containing all of the data in this Level object formatted as the input file
      */
