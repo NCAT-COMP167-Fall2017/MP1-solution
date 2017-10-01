@@ -7,6 +7,7 @@ package brickbreakerstudent;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import javafx.scene.paint.Color;
@@ -86,6 +87,25 @@ public class BrickBreakerIO {
             }
             
             gmProf.setSelectedProfile(gmProf.getPlayerProfile(0));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BrickBreakerIO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**
+     * Writes the statically provided GameProfile object to a PlayerProfile config file
+     * @param gmProf a static GameProfiles object to be saved to a file
+     * @param pFileName the path to a player profile config file
+     */
+    public static void writeProfiles(GameProfiles gmProf, String pFileName) {
+        try {
+            PrintWriter profileWriter = new PrintWriter(new File(pFileName));
+            
+            for(int i = 0; i < gmProf.getNumPlayerProfiles(); i++) {
+                profileWriter.println(gmProf.getPlayerProfile(i).toString());
+            }
+            
+            profileWriter.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(BrickBreakerIO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
