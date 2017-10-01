@@ -9,8 +9,8 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
     <jar href="BrickBreakerDriver.jar" size="1430" download="eager" />
-    <jar href="lib\BrickBreakerEngine.jar" size="30564" download="eager" />
-    <jar href="lib\BrickBreakerStudent.jar" size="8103" download="eager" />
+    <jar href="lib/BrickBreakerEngine.jar" size="30558" download="eager" />
+    <jar href="lib/BrickBreakerStudent.jar" size="7433" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="BrickBreakerDriver" >
     <param name="requiredFXVersion" value="8.0+"/>
