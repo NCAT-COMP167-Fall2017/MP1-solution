@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author CCannon
  */
 public class GameProfiles {
+    private String profileFilename;
     private PlayerProfile selectedProfile;
     private PlayerProfile highGameProfile;
     private ArrayList<PlayerProfile> profiles;
@@ -112,5 +113,19 @@ public class GameProfiles {
         }
         
         return outputString;
+    }
+
+    /**
+     * @return the profileFilename
+     */
+    public String getProfileFilename() {
+        return profileFilename;
+    }
+
+    /**
+     * @param profileFilename the profileFilename to set
+     */
+    public void setProfileFilename(String profileFilename) {
+        this.profileFilename = profileFilename;
     }
 }
