@@ -71,7 +71,7 @@ public class Level {
     }
     
     /**
-     * Retrives the number of Brick Rows in this level from the size of the brickRows array
+     * Retrieves the number of Brick Rows in this level from the size of the brickRows array
      * @return the number of BrickRow objects in this Level object
      */
     public int getNumBrickRows(){
