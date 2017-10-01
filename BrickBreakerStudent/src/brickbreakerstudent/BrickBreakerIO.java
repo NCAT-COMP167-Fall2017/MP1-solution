@@ -64,6 +64,7 @@ public class BrickBreakerIO {
      * @param pFileName the path to a player profile config file
      */
     public static void readProfiles(GameProfiles gmProf, String pFileName) {
+        gmProf.setProfileFilename(pFileName);
         try {
             Scanner profileReader = new Scanner(new File(pFileName));
             
@@ -98,6 +99,7 @@ public class BrickBreakerIO {
      * @param pFileName the path to a player profile config file
      */
     public static void writeProfiles(GameProfiles gmProf, String pFileName) {
+        gmProf.setProfileFilename(pFileName);
         try {
             PrintWriter profileWriter = new PrintWriter(new File(pFileName));
             
