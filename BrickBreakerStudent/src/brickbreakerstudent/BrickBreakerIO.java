@@ -40,7 +40,7 @@ public class BrickBreakerIO {
                     int rowIndex = Integer.parseInt(fileReader.nextLine());
                     
                     String[] color = fileReader.nextLine().split("\\s+");
-                    Color rowColor = new Color(Double.parseDouble(color[0])/255.0, Double.parseDouble(color[1])/255.0, Double.parseDouble(color[2])/255.0, 0.0);
+                    Color rowColor = new Color(Integer.parseInt(color[0]), Integer.parseInt(color[1]), Integer.parseInt(color[2]), 0.0);
                     int rowPointValue = Integer.parseInt(fileReader.nextLine());
                     String rowBrickMask = fileReader.nextLine();
                     
