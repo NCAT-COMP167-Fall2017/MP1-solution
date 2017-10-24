@@ -55,6 +55,7 @@ public class BrickBreakerIO {
             }
         } catch (FileNotFoundException ex) {
             levels = new Level[0];
+            System.err.println("Game configuration input file not found");
             Logger.getLogger(BrickBreakerIO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         return levels;
@@ -86,11 +87,12 @@ public class BrickBreakerIO {
                 if(newPlayer.getHighScore() > gmProf.getHighGameProfile().getHighScore())
                     gmProf.setHighGameProfile(newPlayer);
                 
-                gmProf.addPlayerProfile(newPlayer);
+                gmProf.addProfile(newPlayer);
             }
             
-            gmProf.setSelectedProfile(gmProf.getPlayerProfile(0));
+            gmProf.setSelectedProfile(gmProf.getProfile(0));
         } catch (FileNotFoundException ex) {
+            System.err.println("Player profiles input file not found");
             Logger.getLogger(BrickBreakerIO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
@@ -105,12 +107,13 @@ public class BrickBreakerIO {
         try {
             PrintWriter profileWriter = new PrintWriter(new File(pFileName));
             
-            for(int i = 0; i < gmProf.getNumPlayerProfiles(); i++) {
-                profileWriter.println(gmProf.getPlayerProfile(i).toString());
+            for(int i = 0; i < gmProf.getNumProfiles(); i++) {
+                profileWriter.println(gmProf.getProfile(i).toString());
             }
             
             profileWriter.close();
         } catch (FileNotFoundException ex) {
+            System.err.println("Player profiles output file not found");
             Logger.getLogger(BrickBreakerIO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
