@@ -7,6 +7,7 @@ package brickbreakerstudent;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import javafx.scene.paint.Color;
@@ -57,5 +58,60 @@ public class BrickBreakerIO {
             Logger.getLogger(BrickBreakerIO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         return levels;
+    }
+    
+    /**
+     * Reads a config file of PlayerProfiles and adds them to the statically provided Game Profile
+     * @param gmProf a static GameProfiles object that will receive PlayerProfiles
+     * @param pFileName the path to a player profile config file
+     */
+    public static void readProfiles(GameProfiles gmProf, String pFileName) {
+        gmProf.setProfileFilename(pFileName);
+        try {
+            Scanner profileReader = new Scanner(new File(pFileName));
+            
+            while(profileReader.hasNext()) {
+                PlayerProfile newPlayer = new PlayerProfile();
+                
+                newPlayer.setName(profileReader.nextLine());
+                newPlayer.setNumGamesPlayed(Integer.parseInt(profileReader.nextLine()));
+                newPlayer.setHighScore(Integer.parseInt(profileReader.nextLine()));
+                
+                int numSavedGames = Integer.parseInt(profileReader.nextLine());
+                
+                for(int i = 0; i < numSavedGames; i++) {
+                    newPlayer.addSavedGame(profileReader.nextLine());
+                }
+                
+                if(newPlayer.getHighScore() > gmProf.getHighGameProfile().getHighScore())
+                    gmProf.setHighGameProfile(newPlayer);
+                
+                gmProf.addPlayerProfile(newPlayer);
+            }
+            
+            gmProf.setSelectedProfile(gmProf.getPlayerProfile(0));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BrickBreakerIO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**
+     * Writes the statically provided GameProfile object to a PlayerProfile config file
+     * @param gmProf a static GameProfiles object to be saved to a file
+     * @param pFileName the path to a player profile config file
+     */
+    public static void writeProfiles(GameProfiles gmProf, String pFileName) {
+        gmProf.setProfileFilename(pFileName);
+        try {
+            PrintWriter profileWriter = new PrintWriter(new File(pFileName));
+            
+            for(int i = 0; i < gmProf.getNumPlayerProfiles(); i++) {
+                profileWriter.println(gmProf.getPlayerProfile(i).toString());
+            }
+            
+            profileWriter.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BrickBreakerIO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
     }
 }

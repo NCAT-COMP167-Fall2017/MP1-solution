@@ -22,6 +22,7 @@ public class GameProfiles {
      * instance of that object.
      */
     public GameProfiles() {
+        profileFilename = "";
         selectedProfile = new PlayerProfile();
         highGameProfile = new PlayerProfile();
         profiles = new ArrayList<PlayerProfile> ();
